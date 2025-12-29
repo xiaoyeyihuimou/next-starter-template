@@ -1,26 +1,36 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Ink / Zen Theme Palette */
+  --paper: #fdfbf7; /* Rice paper off-white */
+  --ink: #1a1a1a;   /* Deep ink black */
+  --ink-light: #4a4a4a; /* Lighter ink for secondary text */
+  --cinnabar: #b91c1c; /* Traditional seal red */
+  --gold: #d4af37; /* Muted gold for accents */
+  
+  --background: var(--paper);
+  --foreground: var(--ink);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-ink-light: var(--ink-light);
+  --color-cinnabar: var(--cinnabar);
+  --color-gold: var(--gold);
+  
+  --font-serif: "Times New Roman", Times, serif; /* Placeholder for a better serif webfont */
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+/* Utility for ink wash effect */
+.ink-wash {
+  background-image: radial-gradient(circle at 50% 50%, rgba(0,0,0,0.02) 0%, transparent 60%);
 }
